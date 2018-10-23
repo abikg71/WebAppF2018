@@ -1,3 +1,4 @@
+#.../app/controllers/students_controller.rb
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
@@ -15,16 +16,20 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
+    @sections = Section.all
   end
 
   # GET /students/1/edit
   def edit
+    @sections = Section.all
+    
   end
 
   # POST /students
   # POST /students.json
   def create
     @student = Student.new(student_params)
+    
 
     respond_to do |format|
       if @student.save
@@ -70,5 +75,6 @@ class StudentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
       params.require(:student).permit(:name)
+      params.require(:section).permit(:number, :section_ids =>[])
     end
 end

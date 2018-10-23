@@ -5,6 +5,7 @@ class SectionsController < ApplicationController
   # GET /sections.json
   def index
     @sections = Section.all
+    @students = Student.all
   end
 
   # GET /sections/1
@@ -19,13 +20,14 @@ class SectionsController < ApplicationController
 
   # GET /sections/1/edit
   def edit
+    @students = Student.all
   end
 
   # POST /sections
   # POST /sections.json
   def create
     @section = Section.new(section_params)
-
+  
     respond_to do |format|
       if @section.save
         format.html { redirect_to @section, notice: 'Section was successfully created.' }
@@ -70,5 +72,6 @@ class SectionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
       params.require(:section).permit(:semester, :number, :room, :course, :references)
+      params.require(:student).permit(:name,:student_ids =>[])
     end
 end

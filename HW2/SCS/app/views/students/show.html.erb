@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<!-- Added-->
+
+<strong>Section:</strong>
+<ol>
+  <% @student.sections.each do |section| %>
+    <li><%=section.number %></li>
+  <% end %>
+</ol>
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

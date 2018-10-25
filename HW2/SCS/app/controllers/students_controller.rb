@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   #
+  autocomplete :student, :name, full_search: true
+
   def search
     @students = Student.where("name like ?", "%#{params[:query]}%")
     render :index

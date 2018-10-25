@@ -9,7 +9,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+   <body>
     <%= yield %>
-  </body>
+    <footer>
+        <a href="http://facebook.com/abinet.getachew.1" class = "social-icon">
+                <%= image_tag("facebook.png", :alt => "rss feed") %></a>            
+        <a href="https://github.com/abikg71" class ="social-icon">
+                <%= image_tag("github.png", :alt => "rss feed") %></a>
+        <a href="https://www.linkedin.com/in/abinet-kenore" class ="social-icon">
+                <%= image_tag("linkedin.png", :alt => "rss feed") %></a>
+        <a href="https://twitter.com/abikenore" class = "social-icon">
+                <%= image_tag("twitter.png", :alt => "rss feed") %></a>
+        <p class="copyright">Copyright 2018, My Q</p>
+    </footer>
+    </body>
 </html>

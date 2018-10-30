@@ -33,7 +33,7 @@ body {
   
   header {
     float: left;
-    margin: 0 0 30px 0;
+    margin: 0 0 10px 0;
     padding: 5px 0 0 0;
     width: 100%;
   }
@@ -64,7 +64,8 @@ body {
   nav {
     text-align: center;
     padding: 10px 0;
-    margin: 20px 0 0;
+    margin: 10px 0 0;
+    border: #000;
   }
   
   /*Select the unordered list nested inside the nav element.

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
   get 'about/index'
+  root to: 'home#index'
   resources :students do
     get :autocomplete_student_name, on: :collection
   collection do
@@ -21,3 +22,4 @@ end
 end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+

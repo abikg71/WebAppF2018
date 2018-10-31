@@ -9,6 +9,7 @@ class SectionsController < ApplicationController
   # GET /sections.json
   def index
     @sections = Section.all
+    @students  = Student.all.includes(:names)
   end
 
   # GET /sections/1

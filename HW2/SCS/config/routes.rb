@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'about/index'
   root to: 'home#index'
+
+  #...config/routes.rb
   resources :students do
     get :autocomplete_student_name, on: :collection
   collection do

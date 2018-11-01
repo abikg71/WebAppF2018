@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  #
+  #.../app/controllers/students_controller.rb
   autocomplete :student, :name, full_search: true
 
   def search

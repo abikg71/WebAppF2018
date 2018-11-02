@@ -7,10 +7,10 @@
 
 <!-- Added-->
 
-<strong>Section:</strong>
+<strong>Section Course:</strong>
 <ol>
   <% @student.sections.each do |section| %>
-    <li><%=section.number %></li>
+    <li><%=section.course.name %></li>
   <% end %>
 </ol>
 <%= link_to 'Edit', edit_student_path(@student) %> |

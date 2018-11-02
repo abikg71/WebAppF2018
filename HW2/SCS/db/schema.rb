@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2018_11_01_180035) do
   end
 
 # Could not dump table "sections_students" because of following StandardError
-#   Unknown type 'name' for column 'section'
+#   Unlsknown type 'name' for column 'section'
 
   create_table "students", force: :cascade do |t|
     t.string "name"

@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     get :autocomplete_student_name, on: :collection
   collection do
     get 'search'
+   end
   end
-end
 
   resources :sections do 
   collection do

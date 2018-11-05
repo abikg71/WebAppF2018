@@ -1,3 +1,185 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/**********************************
+GENERAL
+***********************************/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #0ff9EF;
+  }
+  
+  #wrapper {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  h3 {
+    margin: 0 0 1em 0;
+  }
+  
+  
+  /**********************************
+  HEADING
+  ***********************************/
+  
+  header {
+    float: left;
+    margin: 0 0 5px 0;
+    padding: 3px 0 0 0;
+    width: 100%;
+  }
+  
+  #logo {
+    text-align: center;
+    margin: 0;
+  }
+  
+  h1 {
+    font-family: 'Changa One', sans-serif;
+    margin: 15px 0;
+    font-size: 1.75em;
+    font-weight: normal;
+    line-height: 0.8em;
+  }
+  
+  h2 {
+    font-size: 0.75em;
+    margin: -5px 0 0;
+    font-weight: normal;
+  }
+  
+  /**********************************
+  NAVIGATION
+  ***********************************/
+  
+  nav {
+    text-align: center;
+    padding: 10px 0;
+    margin: 10px 0 0;
+    border: #000;
+  }
+  
+  /*Select the unordered list nested inside the nav element.
+  Remove the margins on the top and bottom. Set the margins
+  on the left and right to 10px.*/
+  nav ul {
+    list-style: none;
+    margin: 0 10px;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+  }
+  
+  nav a {
+    font-weight: 800;
+    padding: 15px 10px;
+  }
+  
+ /**********************************
+Images
+***********************************/
+img{
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+
+}
+a img{
+	padding: 0.12em;
+}
+
+/**********************************
+FOOTER
+***********************************/
+
+footer {
+  font-size: 0.75em;
+  padding-top: 0.75%;
+	border-radius: 1em;
+  text-align: center;
+  margin:25%;
+  clear: both;
+	background: #2C1608;
+  /* separates the footer from the picture*/
+  color: #0ff;
+}
+footer img {
+  padding: 10px;
+  font-size: 5px;
+}
+
+.social-icon {
+font-size: 25%;
+width: 20px;
+height: 20px;
+}
+
+.copyright{
+  margin-left: 5%;
+}
+  
+  /**********************************
+  PAGE: PORTFOLIO
+  ***********************************/
+  
+ 
+  
+  
+  
+  /**********************************
+  COLORS
+  ***********************************/
+  
+  /* site body */
+  body {
+    background-color: #faebd7;
+    color: #999;
+  }
+  
+  /* green header */
+  header {
+    background: #000;
+    border-color: #599a68;
+  }
+  
+  /* nav background on mobile */
+  nav {
+    background: #599a68;
+  
+  }
+  
+  /* logo text */
+  h1, h2 {
+    color: #fff;
+  }
+  
+  /* links */
+  a {
+    color: #6ab47b;
+  }
+  
+  /* nav link */
+  nav a, nav a:visited {
+    color: #fff;
+  }
+  
+  /* selected nav link */
+  nav a.selected, nav a:hover {
+    color: #32673f;
+  }
+

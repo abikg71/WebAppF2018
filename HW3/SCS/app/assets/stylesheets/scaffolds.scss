@@ -88,5 +88,46 @@ label {
   display: block;
 }
 
+/**********************************
+FOOTER
+***********************************/
 
+footer {
+  font-size: 0.75em;
+  padding-top: 0.75%;
+	border-radius: 1em;
+  text-align: center;
+  margin:25%;
+  clear: both;
+	background: #2C1608;
+  /* separates the footer from the picture*/
+  color: #0ff;
+}
+footer img {
+  padding: 10px;
+  font-size: 5px;
+}
 
+.social-icon {
+font-size: 25%;
+width: 20px;
+height: 20px;
+}
+
+.copyright{
+  margin-left: 5%;
+}
+
+@media only screen and (max-width: 600px) {
+  .jumbotron{
+    size: 5%;
+
+  }
+ h1, h2 {
+    font-size: 10px
+  }
+  .display-5 {
+    size: 10px;
+  }
+  
+}

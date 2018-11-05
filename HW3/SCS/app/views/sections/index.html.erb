@@ -1,71 +1,93 @@
-    <title>My Q | Opportunity For All</title
-      <link rel="stylesheet" href="css/normalize.css">
-      <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800'
-      rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="css/main.css">
-      <link rel="stylesheet" href="/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css?family=Muli%7CRoboto:400,300,500,700,900"
-        rel="stylesheet">
-  </head>
-  <body>
+<title>My Q | Opportunity For All</title>
+ <link rel="stylesheet" href="css/normalize.css">
+<link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="/css/responsive.css">
+<link href="https://fonts.googleapis.com/css?family=Muli%7CRoboto:400,300,500,700,900" rel="stylesheet">
+</head>
+
+<body>
     <header>
-      <a href="http://localhost:3000/sections" id="logo"></a>
-      <h1>Web Application | CS390P</h1>
-      <h2>Project_2 </h2>
-      <nav>
-        <ul>
-          <li><a href="http://localhost:3000/home/index">Home</a></li>
-           <li><a href="http://localhost:3000/students">Students</a></li> <!--More  -->
-            <li><a href="http://localhost:3000/courses">Courses</a></li>
-            <li><a href="http://localhost:3000/sections"class="selected">Sections</a></li>
-            <li><a href="http://localhost:3000/about/index">About</a></li>
-            <li><a href="localhost:3000/users/sign_up">Login</a></li>
-            <li><a href="#">Profile</a></li>
-        </ul>
-      </nav> <!-- Nav ends here -->
-    </header> <!-- Header ends here -->
+        <a href="http://localhost:3000/sections" id="logo"></a>
+        <h1>Web Application | CS390P</h1>
+        <h2>Project_3 </h2>
+        <nav>
+            <ul>
+                <li><a href="http://localhost:3000/home/index">Home</a></li>
+                <li><a href="http://localhost:3000/students">Students</a></li>
+                <!--More  -->
+                <li><a href="http://localhost:3000/courses">Courses</a></li>
+                <li><a href="http://localhost:3000/sections" class="selected">Sections</a></li>
+                <li><a href="http://localhost:3000/about/index">About</a></li>
+                <li><a href="localhost:3000/users/sign_up">Login</a></li>
+                <li><a href="#">Profile</a></li>
+                <li>
+                    <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+                </li>
+            </ul>
+        </nav>
+        <!-- Nav ends here -->
+    </header>
+    <!-- Header ends here -->
 
-<ul>
-<table>
-  <thead>
-  <h1>Sections</h1>
-    <tr>
-      <th>Semester</th>
-      <th>Number</th>
-      <th>Room</th>
-      <th>Course</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+    <ul>
+        <table>
+            <thead>
+                <h1>Sections</h1>
+                <tr>
+                    <th>Semester</th>
+                    <th>Number</th>
+                    <th>Room</th>
+                    <th>Course</th>
+                    <th colspan="4"></th>
+                </tr>
+            </thead>
 
-  <!-- Search  Section-->
+            <!-- Search  Section-->
 
-  <tbody>
-    <% @sections.each do |section| %>
-      <tr>
-        <td><%= section.semester %></td>
-        <td><%= section.number %></td>
-        <td><%= section.room %></td>
-        <td><%= section.course.name %></td>
-        <td><%= link_to 'Show', section %></td>
-        <td><%= link_to 'Edit', edit_section_path(section) %></td>
-        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            <tbody>
+                <% @sections.each do |section| %>
+                    <tr>
+                        <td>
+                            <%= section.semester %>
+                        </td>
+                        <td>
+                            <%= section.number %>
+                        </td>
+                        <td>
+                            <%= section.room %>
+                        </td>
+                        <td>
+                            <%= section.course.name %>
+                        </td>
+                        <td>
+                            <%= link_to 'Show', section %>
+                        </td>
+                        <td>
+                            <%= link_to 'Edit', edit_section_path(section) %>
+                        </td>
+                        <td>
+                            <%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %>
+                        </td>
+                    </tr>
+                    <% end %>
+            </tbody>
+        </table>
 
-<br>
+        <br>
 
-<%= link_to 'New Section', new_section_path %>
+        <%= link_to 'New Section', new_section_path %>
 
-<!-- Home Page Added -->
-<ul>
-<%= link_to 'Home', "http://localhost:3000/home/index" %><br>
+            <!-- Home Page Added -->
+            <ul>
+                <%= link_to 'Home', "http://localhost:3000/home/index" %>
+                    <br>
 
-<%= link_to 'Courses', "http://localhost:3000/courses" %><br>
+                    <%= link_to 'Courses', "http://localhost:3000/courses" %>
+                        <br>
 
-<%= link_to 'Sections', "http://localhost:3000/sections" %><br>
+                        <%= link_to 'Sections', "http://localhost:3000/sections" %>
+                            <br>
 
-<%= link_to 'Students', "http://localhost:3000/students" %>
-</ul
+                            <%= link_to 'Students', "http://localhost:3000/students" %>
+            </ul>

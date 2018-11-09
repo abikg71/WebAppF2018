@@ -1,14 +1,14 @@
 require 'test_helper'
 
 class StudentsControllerTest < ActionDispatch::IntegrationTest
-  # setup do
-  #   @student = students(:one)
-  # end
+   setup do
+     @student = students(:one)
+  end
 
-  # test "should get index" do
-  #   get students_url
+  #  test "should get index" do
+  #    get students_url
   #   assert_response :success
-  # end
+  #  end
 
   # test "should get new" do
   #   get new_student_url

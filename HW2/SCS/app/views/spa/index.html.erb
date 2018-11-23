@@ -1,4 +1,4 @@
-html>
+<html>
 <head>
 <title>A very simple jQuery SPA</title>
 <script
@@ -10,7 +10,7 @@ html>
 
 <button onclick="fetch('students', ['name',])">Students</button>
 <button onclick="fetch('courses', ['name'])">Courses</button>
-<button onclick="fetch('sections', ['name'])">Sections</button>
+<button onclick="fetch('sections', ['number'])">Sections</button>
 
 <div id="list">
 </div>
@@ -42,7 +42,7 @@ var fetch = function(which, fields) {
 
 <%= link_to 'Sections', "http://localhost:3000/sections" %><br>
 
-<%= link_to 'Home', "http://localhost:3000/spa/index" %><br>
+<%= link_to 'SPA', "http://localhost:3000/spa/index" %><br>
 </ul>
 </div>
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'spa/index'
   get 'home/index'
   get 'about/index'
   root to: 'home#index'

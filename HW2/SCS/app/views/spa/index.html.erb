@@ -7,6 +7,23 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
+ <header>
+      <a href="http://localhost:3000/spa/index" id="logo"></a>
+      <h1>Web Application | CS390P</h1>
+      <h2>Project_2/5 </h2>
+      <nav>
+        <ul>
+        <li><a href="http://localhost:3000/spa/index">SPA</a></li>
+          <li><a href="http://localhost:3000/home/index">Home</a></li>
+           <li><a href="http://localhost:3000/students">Students</a></li> <!--More  -->
+            <li><a href="http://localhost:3000/courses"class="selected">Courses</a></li>
+            <li><a href="http://localhost:3000/sections">Sections</a></li>
+            <li><a href="http://localhost:3000/about/index">About</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav> <!-- Nav ends here -->
+    </header> <!-- Header ends here -->
 
 <button onclick="fetch('students', ['name',])">Students</button>
 <button onclick="fetch('courses', ['name'])">Courses</button>
@@ -45,6 +62,24 @@ var fetch = function(which, fields) {
 <%= link_to 'SPA', "http://localhost:3000/spa/index" %><br>
 </ul>
 </div>
+<section>
+<p>
+<strong> Assignment 5</strong>
+You use your assignment two's JSON API to create a Single Page Application. <br> 
+Display everything your app did via HTML in your SPA. <br>
+Make sure to make all requests via Ajax so that the URL does not change <br>
+even though the information displayed does.  
+You are not required to upload information,
+ only display it; <br>C/U/D operations via Ajax are extra credit. <br>
+ I recommend putting your .html file in the public directory of your 
+ application so you don't run into any CORS issues. <br>Remember to bring up your <br>
+ browser's web console to help you debug your SPA. 
+ <p>You can also use the console.log method to print values to the web console.</p>
 
+Some example SPAs are at https://github.com/drsjb80/SPAs.git <br>
+<p>
+<strong>You must include a link to your GitHub repo for this assignment in your paper. <strong> </p>
+</p>
+</section>
 </body>
 </html>

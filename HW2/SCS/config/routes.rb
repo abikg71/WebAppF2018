@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'spa/index'
   get 'home/index'
   get 'about/index'
-  root to: 'home#index'
+  root to: 'spa#index'
 
   #...config/routes.rb
   resources :students do

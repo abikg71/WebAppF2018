@@ -8,11 +8,13 @@ html>
 </head>
 <body>
 
-<button onclick="fetch('students', ['name', 'advisor_id'])">Students</button>
-<button onclick="fetch('advisors', ['name'])">Advisors</button>
+<button onclick="fetch('students', ['name',])">Students</button>
+<button onclick="fetch('courses', ['name'])">Courses</button>
+<button onclick="fetch('sections', ['name'])">Sections</button>
 
 <div id="list">
 </div>
+
 
 <script>
 var fetch = function(which, fields) {
@@ -31,6 +33,18 @@ var fetch = function(which, fields) {
     .fail(function(json){ console.log("fail"); })
 };
 </script>
+<!-- Home Page Added -->
+<div>
+<ul>
+<%= link_to 'Home', "http://localhost:3000/home/index" %><br>
+
+<%= link_to 'Courses', "http://localhost:3000/courses" %><br>
+
+<%= link_to 'Sections', "http://localhost:3000/sections" %><br>
+
+<%= link_to 'Home', "http://localhost:3000/spa/index" %><br>
+</ul>
+</div>
 
 </body>
 </html>

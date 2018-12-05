@@ -1,10 +1,9 @@
 <html>
 <head>
 <title>A very simple jQuery SPA</title>
-<script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
  <header>
@@ -13,44 +12,81 @@
       <h2>Project_2/5 </h2>
       <nav>
         <ul>
-        <li><a href="http://localhost:3000/spa/index">SPA</a></li>
+        <li><a href="http://localhost:3000/spa/index"class="selected">SPA</a></li>
           <li><a href="http://localhost:3000/home/index">Home</a></li>
            <li><a href="http://localhost:3000/students">Students</a></li> <!--More  -->
-            <li><a href="http://localhost:3000/courses"class="selected">Courses</a></li>
+            <li><a href="http://localhost:3000/courses">Courses</a></li>
             <li><a href="http://localhost:3000/sections">Sections</a></li>
             <li><a href="http://localhost:3000/about/index">About</a></li>
             <li><a href="#">Login</a></li>
-            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#">Profile</a></li>
         </ul>
       </nav> <!-- Nav ends here -->
     </header> <!-- Header ends here -->
 
-<button onclick="fetch('students', ['name',])">Students</button>
-<button onclick="fetch('courses', ['name'])">Courses</button>
-<button onclick="fetch('sections', ['number'])">Sections</button>
 
-<div id="list">
+<div id="Itemlist">
+  <button v-on:click="students_selected=true, sections_selected=false, courses_selected=false">students</button>
+    <button v-on:click="courses_selected=true, sections_selected=false, students_selected=false">courses</button>
+    <button v-on:click="sections_selected=true, students_selected=false, courses_selected=false">sections</button>
+   <ul>
+
+    <span v-if="sections_selected">
+        <div v-for="section in sections">
+            <li>{{section.semester}} - {{section.course_id}}</li>
+                <div v-for="course in courses">
+                    <span v-if="section.course_id === course.id">
+                        {{course.name}}
+                    </span>
+                </div>
+        </div>
+    </span>
+
+    <span v-else-if="courses_selected">
+        <div v-for="course in courses">
+            <li>{{course.name}} Department: {{course.department}}</li>
+            <div v-for="section in sections">
+                <span v-if="section.course_id === course.id">
+                    {{section.semester}} #{{section.number}}
+                </span>
+            </div>
+        </div>
+    </span>
+
+    <span v-else-if="students_selected">
+        <div v-for="student in students">
+            <li>{{student.name}}</li>
+                <div v-for="section in sections">
+                        {{section.number}}
+                </div>
+        </div>
+    </span>
+    </ul>
 </div>
 
-
-<script>
-var fetch = function(which, fields) {
-    $("#list").empty();
-    $.get("http://localhost:3000/" + which + ".json", true)
-    .done(function(json) {
-        for (item in json) {
-            lis = "<li>";
-            for (field in fields) {
-                lis += json[item][fields[field]] + " ";
-            }
-            lis += "</li>";
-            $("#list").append(lis);
-        }
-    })
-    .fail(function(json){ console.log("fail"); })
-};
+<script type="text/javascript">
+var ItemsVue = new Vue({
+    el: '#Itemlist',
+    data: { courses: [],
+        students_selected: false,
+        sections_selected: false,
+        courses_selected: false,
+        sections: [],
+        students: []
+     },
+    mounted: function() {
+        axios.get('http://localhost:3000/sections.json')
+            .then(response => { this.sections = response.data })
+            .catch(error => { console.log(error); });
+        axios.get('http://localhost:3000/courses.json')
+            .then(response => { this.courses = response.data })
+            .catch(error => { console.log(error); });
+        axios.get('http://localhost:3000/students.json')
+            .then(response => { this.students = response.data })
+            .catch(error => { console.log(error); });
+    }
+});
 </script>
-<!-- Home Page Added -->
 <div>
 <ul>
 <%= link_to 'Home', "http://localhost:3000/home/index" %><br>
@@ -63,14 +99,16 @@ var fetch = function(which, fields) {
 </ul>
 </div>
 <section>
+<hr>
+<hr>
 <p>
-<strong> Assignment 5</strong>
-You use your assignment two's JSON API to create a Single Page Application. <br> 
+<strong> About: <br>Assignment 5</strong>
+<p> You use your assignment two's JSON API to create a Single Page Application. <br> 
 Display everything your app did via HTML in your SPA. <br>
 Make sure to make all requests via Ajax so that the URL does not change <br>
 even though the information displayed does.  
 You are not required to upload information,
- only display it; <br>C/U/D operations via Ajax are extra credit. <br>
+ only display it; <br>C/U/D operations via Ajax are extra credit.</p> <br>
  I recommend putting your .html file in the public directory of your 
  application so you don't run into any CORS issues. <br>Remember to bring up your <br>
  browser's web console to help you debug your SPA. 
@@ -80,6 +118,7 @@ Some example SPAs are at https://github.com/drsjb80/SPAs.git <br>
 <p>
 <strong>You must include a link to your GitHub repo for this assignment in your paper. <strong> </p>
 </p>
+<hr>
 </section>
 </body>
 </html>
